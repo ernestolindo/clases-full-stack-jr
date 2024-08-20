@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  margin: 3vw;
+}
+
+/* Header */
+.header-container{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center elements vertically */
+  flex-direction: column; /* Stack elements vertically */
+  text-align: center; /* Center text horizontally */
+} 
+
+.header-container img{
+  object-fit: cover;
+  border-radius: 1vw;
+}
+
+/* Time */
+
+.main-container .time-article .time-container .time-box{
+  background-color: #f1f1f1;
+  border-radius: 1vw;
+  padding: 2vw;
+}
+
+.main-container .time-article .time-container .time-box .time{
+  font-weight: bold;
+}
+
+.main-container .time-article .time-container{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  gap: 2vw;
+}
+
+/* Ingredients */
+.main-container .ingredients .ingredients-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container .ingredients .ingredients-list li{
+  margin-bottom: 5vh;
+}
+
+.main-container .ingredients .ingredients-list li .eggs{
+  font-weight: bold;
+}
+
+.main-container .ingredients .ingredients-list li .temperature{
+  color: #929292
+}
+
+/* Instructions */
+
+.main-container .instructions .instructions-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container .instructions .instructions-list li{
+  margin-bottom: 5vh;
+}
+
+/* Nutrition Facts */
+
+.main-container .facts .facts-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+} 
+
+.main-container .facts .facts-list li{
+  margin-bottom: 5vh;
+}
+
+/* Responsiveness */
+
+@media (max-width: 425px) {
+  .main-container .time-article .time-container{
+    display: block;
+  }
+
+  .main-container .time-article .time-container .time-box{
+    margin-bottom: 4vh;
+  }
+}
