@@ -8,6 +8,7 @@
 //Declaracion de clase
 
 class Auto{
+
   //Caracteristicas generales -> Propiedades o atributos
   numChasis:number;
   motor:string;
@@ -20,36 +21,38 @@ class Auto{
   modelo:string;
   anioFab:number;
 
-  // Constructor
+  //Constructor -> Metodo reservado que nos sirve para instanciar objetos
   constructor(numChasisParam:number,motorParam:string,colorParam:string,tipoCompustibleParam:string, transmisionParam:string,plazasParam:number,frenosParam:string, modeloParam:string, añoFabParam:number){
-    this.numChasis = numChasisParam;
-    this.motor = motorParam;
-    this.color = colorParam;
-    this.tipoCombustible = tipoCompustibleParam;
-    this.transmision = transmisionParam;
-    this.plazas = plazasParam;
-    this.frenos = frenosParam;
-    this.modelo = modeloParam;
-    this.anioFab = añoFabParam;
+      this.numChasis = numChasisParam;
+      this.motor = motorParam;
+      this.color = colorParam;
+      this.tipoCombustible = tipoCompustibleParam;
+      this.transmision = transmisionParam;
+      this.plazas = plazasParam;
+      this.frenos = frenosParam;
+      this.modelo = modeloParam;
+      this.anioFab = añoFabParam;
   }
 
-  // Metodos: Cosas que puede hacer una clase
-  encender():void{
-    console.log('Brum');
-  }
+  //Metodos -> Acciones 
+  encender():void {
+      console.log("Brum re brum");
+  }    
 
   apagar():void{
-    console.log('Chauchis');
+      console.log("Chauchis");
   }
+  
 }
 
-// Instanciar: crear un objeto a traves de una clase
+//Instanciar objetos a traves de una clase -> Crear un objeto
 
-let autito:Auto = new Auto();
-
+let autito:Auto = new Auto(123456,"v8","Azul","Gasolina","Manual",2,"ABC","Huayra",2018);
 console.log(autito);
 
-// Asignar una propiedad al objeto
-autito.modelo = 'Enzo';
-console.log(autito);
+//Asignamos una propiedad al objeto
+//autito.modelo = "Huayra";
+//console.log(autito);
 
+//autito.motor = "v12"
+//console.log(autito);

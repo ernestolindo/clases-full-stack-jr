@@ -5,20 +5,32 @@
 // Objeto -> Lo que podemos crear en base a ese molde
 //Declaracion de clase
 var Auto = /** @class */ (function () {
-    function Auto() {
+    //Constructor -> Metodo reservado que nos sirve para instanciar objetos
+    function Auto(numChasisParam, motorParam, colorParam, tipoCompustibleParam, transmisionParam, plazasParam, frenosParam, modeloParam, añoFabParam) {
+        this.numChasis = numChasisParam;
+        this.motor = motorParam;
+        this.color = colorParam;
+        this.tipoCombustible = tipoCompustibleParam;
+        this.transmision = transmisionParam;
+        this.plazas = plazasParam;
+        this.frenos = frenosParam;
+        this.modelo = modeloParam;
+        this.anioFab = añoFabParam;
     }
-    // Metodos: Cosas que puede hacer una clase
+    //Metodos -> Acciones 
     Auto.prototype.encender = function () {
-        console.log('Brum');
+        console.log("Brum re brum");
     };
     Auto.prototype.apagar = function () {
-        console.log('Chauchis');
+        console.log("Chauchis");
     };
     return Auto;
 }());
-// Instanciar: crear un objeto a traves de una clase
-var autito = new Auto();
+//Instanciar objetos a traves de una clase -> Crear un objeto
+var autito = new Auto(123456, "v8", "Azul", "Gasolina", "Manual", 2, "ABC", "Huayra", 2018);
 console.log(autito);
-// Asignar una propiedad al objeto
-autito.modelo = 'Enzo';
-console.log(autito);
+//Asignamos una propiedad al objeto
+//autito.modelo = "Huayra";
+//console.log(autito);
+//autito.motor = "v12"
+//console.log(autito);
