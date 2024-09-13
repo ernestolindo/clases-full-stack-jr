@@ -26,7 +26,7 @@ class Person{
       this.dui = duiParam;
   }
 
-  respirar(){
+  respirar():void{
       console.log("Afff");
   }
 
@@ -34,6 +34,10 @@ class Person{
   getName():string {
       return this.name;
   }
+
+  getAge():number {
+    return this.age;
+}
 
   
   setAge(ageParam:number){
@@ -46,3 +50,36 @@ let personita = new Person("Jairo Vega",75,"0105080-3");
 //personita.name = "Hector";
 console.log(personita);
 console.log(personita.getName());
+
+class Developer extends Person{
+    private exp:number;
+    private techSkills:string[];
+    private softSkills:string[];
+    private gitUser:string;
+    private area:string;
+    private projects:string[];
+
+    constructor(nameParam:string,ageParam:number,duiParam:string, expParam:number, techSkillsParam:string[], softSkillsParam:string[], gitUserParam:string, areaParam:string, projectsParam:string[]){
+        super(nameParam, ageParam, duiParam);
+        this.exp = expParam;
+        this.techSkills = techSkillsParam;
+        this.softSkills = softSkillsParam;
+        this.gitUser = gitUserParam;
+        this.area = areaParam;
+        this.projects = projectsParam;
+    }
+
+    getArea():string{
+        return this.area;
+    }
+
+    respirar(): void {
+        console.log('Sniff sniff');
+    }
+}
+
+let developercito = new Developer('Ernesto Lindo', 20, '06663943-5', 2, ['JavaScript', 'PHP', 'CSS', 'HTML'], ['Comunicacion efectiva', 'Proactividad', 'Liderazgo'], 'ernestolindo', 'Backend Developer', ['APIs']);
+developercito.getAge();
+
+personita.respirar();
+developercito.respirar();
