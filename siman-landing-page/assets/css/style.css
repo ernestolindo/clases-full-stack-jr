@@ -1,0 +1,267 @@
+/* Colores */
+:root {
+  --red-1: #d92b3a;
+  --red-2: #8c031c;
+  --red-3: #bf213e;
+  --red-4: #d9415d;
+  --white: #f2f2f2;
+  --azul: #003da5;
+  --negro: #333333;
+}
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Margin global */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 25rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  color: var(--negro);
+}
+
+/* Header */
+
+.header-cont {
+  display: flex;
+  justify-content: space-between; /* Espacia el logo y el navbar */
+  align-items: center; /* Alinea verticalmente el contenido */
+  padding: 10px; /* Espaciado interno */
+  background-color: var(--white);
+}
+
+.header-cont .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-cont .logo img {
+  margin-right: 1rem;
+  width: 3.5rem;
+}
+
+.header-cont .logo h1 {
+  font-family: "Anton", sans-serif;
+  color: var(--red-1);
+}
+
+.header-cont .navbar a {
+  margin-left: 5rem; /* Espacio entre los links del navbar */
+  text-decoration: none; /* Quitar subrayado */
+}
+
+/* Navbar */
+
+.btn {
+  background-color: var(--red-2); /* Fondo del botón */
+  color: var(--white); /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Quitar el subrayado */
+  font-weight: bold; /* Negrita */
+  display: inline-block; /* Para que se comporte como un botón */
+  transition: background-color 0.3s ease; /* Transición suave al hover */
+}
+
+.btn:hover {
+  background-color: var(--red-1); /* Fondo al hacer hover */
+}
+
+/* Hero image */
+
+.hero-image {
+  position: relative; /* Hace que el contenedor sea el punto de referencia para el texto */
+}
+
+.hero-image img {
+  width: 100%; /* Asegúrate de que la imagen se ajuste al contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+}
+
+.hero-text {
+  position: absolute; /* Permite que el texto se posicione sobre la imagen */
+  top: 10px; /* Ajusta la distancia desde la parte superior */
+  left: 10px; /* Ajusta la distancia desde la izquierda */
+  color: white; /* Color del texto */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo semi-transparente para mejorar la legibilidad */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados opcionales */
+}
+
+/* H */
+
+.titulo-hero {
+  font-size: 4rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-family: "Anton", sans-serif;
+}
+
+/* Ver más */
+.ver-mas {
+  position: absolute; /* Permite posicionar el botón sobre la imagen */
+  bottom: 1rem; /* Distancia desde la parte inferior */
+  right: 1rem; /* Distancia desde la derecha */
+  background-color: var(--red-2); /* Color de fondo del botón */
+  color: var(--white); /* Color del texto del botón */
+  padding: 1rem 2rem; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  text-decoration: none; /* Quitar subrayado */
+  font-weight: bold; /* Negrita */
+  transition: background-color 0.3s ease; /* Transición suave al hover */
+}
+
+.ver-mas:hover {
+  background-color: var(--red-1); /* Color de fondo al pasar el mouse */
+}
+
+/* Click on hero image */
+.hero-img {
+  transition: transform 0.3s ease; /* Efecto de transición */
+}
+
+.hero-img:active {
+  transform: scale(0.95); /* Efecto de "clic" (reducción de tamaño) */
+}
+
+/* Ofertas */
+.septiembre-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 2rem; /* Espacio entre las ofertas */
+}
+
+.oferta {
+  position: relative; /* Para el posicionamiento del texto y el botón */
+}
+
+.oferta a {
+  display: block; /* Hace que el enlace ocupe todo el espacio */
+}
+
+.oferta img {
+  width: 100%; /* Ajusta la imagen al contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+  border: 0.2rem solid #003da5; /* Borde azul */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  transition: transform 0.3s ease; /* Efecto de transición */
+}
+
+.oferta img:active {
+  transform: scale(0.95); /* Efecto de "clic" (reducción de tamaño) */
+}
+
+.oferta h3 {
+  position: absolute; /* Posiciona el texto sobre la imagen */
+  top: 1rem; /* Distancia desde la parte superior */
+  left: 1rem; /* Distancia desde la izquierda */
+  color: white; /* Color del texto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  padding: 0.5rem; /* Espaciado interno */
+  border-radius: 0.3rem; /* Bordes redondeados opcionales */
+}
+
+.ver-mas {
+  position: absolute; /* Posiciona el botón sobre la imagen */
+  bottom: 1rem; /* Distancia desde la parte inferior */
+  right: 1rem; /* Distancia desde la derecha */
+  background-color: var(--red-2); /* Color de fondo del botón */
+  color: var(--white); /* Color del texto del botón */
+  padding: 1rem 2rem; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  text-decoration: none; /* Quitar subrayado */
+  font-weight: bold; /* Negrita */
+  transition: background-color 0.3s ease; /* Transición suave al hover */
+}
+
+.ver-mas:hover {
+  background-color: var(--red-1); /* Color de fondo al pasar el mouse */
+}
+
+/* Rebajas */
+.rebajas-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 2rem; /* Espacio entre las ofertas */
+}
+
+.oferta {
+  position: relative; /* Para poder posicionar el <h3> sobre la imagen */
+}
+
+.oferta a {
+  display: block; /* Hace que el enlace ocupe todo el espacio */
+}
+
+.oferta img {
+  width: 100%; /* Ajusta la imagen al contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+  border: 0.2rem solid var(--red-2); /* Borde rojo */
+  border-radius: 0.5rem; /* Bordes redondeados opcionales */
+  transition: transform 0.3s ease; /* Efecto de transición al hacer clic */
+}
+
+.oferta img:active {
+  transform: scale(0.95); /* Efecto de clic (reducción de tamaño) */
+}
+
+.oferta h3 {
+  position: absolute; /* Posiciona el texto sobre la imagen */
+  top: 1rem; /* Distancia desde la parte superior */
+  left: 1rem; /* Distancia desde la izquierda */
+  color: white; /* Color del texto */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo semi-transparente para mejorar la legibilidad */
+  padding: 0.5rem; /* Espaciado interno */
+  border-radius: 0.3rem; /* Bordes redondeados opcionales */
+}
+
+/* Footer */
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+  gap: 20px; /* Espacio entre las secciones */
+  padding: 20px; /* Espaciado interno del footer */
+  background-color: #f8f8f8; /* Fondo del footer (ajusta según tu diseño) */
+}
+
+.footer-cols section {
+  padding: 10px; /* Espaciado interno para cada sección */
+}
+
+.footer-cols h3 {
+  margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.footer-cols a {
+  display: block; /* Cada enlace ocupa toda la línea */
+  margin: 5px 0; /* Espacio entre los enlaces */
+  color: #333333; /* Color de texto para los enlaces */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.footer-cols a:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
