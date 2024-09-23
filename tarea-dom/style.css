@@ -1,0 +1,193 @@
+/* ------ Lo basico */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@300..700&display=swap");
+
+:root {
+  --blanco: #fff; /* Blanco */
+  --rosa-1: #f4a6c0; /* Rosa suave */
+  --rosa-2: #f8d3e0; /* Rosa claro */
+  --rosa-3: #eab8d1; /* Rosa pastel */
+  --rosa-4: #d89fb4; /* Rosa oscuro */
+  --cafe: #333; /* Color de texto oscuro para contraste */
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  background-color: var(--blanco);
+  color: var(--cafe);
+  font-family: "Quicksand", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Lobster", sans-serif;
+  color: var(--rosa-1);
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: var(--cafe);
+  color: var(--blanco);
+}
+
+.input-busqueda.dark-mode {
+  background-color: var(--cafe);
+  color: var(--blanco);
+}
+
+input.dark-mode::placeholder {
+  color: #f0f0f0; /* Un gris más claro para mejorar la legibilidad en modo oscuro */
+}
+
+/* Contenedor */
+
+.navbar-bg {
+  background-color: var(--rosa-1);
+}
+
+.contenedor {
+  width: 100rem;
+  margin: 0 auto;
+}
+
+/* ----- Estilo de enlaces */
+
+.btn-rounded {
+  text-decoration: none;
+  color: var(--blanco);
+  padding: 0.8rem 1.6rem; /* Botón con padding ajustado */
+  background-color: var(--rosa-4); /* Fondo rosa claro */
+  border-radius: 2rem; /* Bordes redondeados */
+  transition: background-color 0.3s ease;
+}
+
+.btn-rounded:hover {
+  background-color: var(--rosa-1); /* Fondo rosa suave en hover */
+}
+
+/* ----- Header */
+
+/* Estilos del contenedor del header y footer */
+.navbar-cont {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  height: 8rem; /* 80px asumiendo 1rem = 10px */
+  background-color: var(--rosa-1); /* Fondo rosa suave */
+  padding: 1rem; /* Espaciado interno */
+  color: var(--blanco); /* Texto blanco */
+  gap: 2rem;
+}
+
+.logo-h1 {
+  color: var(--blanco);
+  font-size: 2.4rem; /* 24px */
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacio entre los enlaces */
+}
+
+/* Barra de búsqueda */
+.barra-busqueda {
+  display: flex;
+  align-items: center;
+}
+
+.barra-busqueda input[type="text"] {
+  width: 20rem; /* 200px */
+  padding: 0.8rem; /* 8px de padding */
+  border-radius: 2rem;
+  border: 2px solid var(--rosa-2);
+  outline: none;
+}
+
+.barra-busqueda button {
+  padding: 0.8rem 1.6rem;
+  background-color: var(--cafe); /* Color café para el botón */
+  color: var(--blanco);
+  border: none;
+  border-radius: 2rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.barra-busqueda button:hover {
+  background-color: var(--rosa-1); /* Fondo rosa suave en hover */
+}
+
+/* ----- Ideas */
+/* Ideas Container */
+.ideas-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+  gap: 2rem; /* Espacio entre las ideas */
+  max-width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Idea Styles */
+.idea {
+  border: 2px solid var(--rosa-3); /* Borde rosa */
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative; /* Para posicionar los botones */
+}
+
+.idea img {
+  width: 100%;
+  height: auto; /* Asegura que las imágenes mantengan su proporción */
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Sistema de navegacion con puntos */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.dot {
+  height: 1rem;
+  width: 1rem;
+  margin: 0 0.5rem;
+  background-color: var(--rosa-3); /* El color para los puntos no activos */
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--rosa-1); /* Color más oscuro para el punto activo */
+}
+
+/* Botones siguiente/anterior y ocultar */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Mostrar botones al hacer hover */
+.idea:hover .buttons {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  margin-top: 1.5rem;
+}

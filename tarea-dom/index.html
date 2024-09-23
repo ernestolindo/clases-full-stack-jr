@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinkterest</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/9cc216c7fb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="navbar-bg">
+      <section class="navbar-cont contenedor">
+        <div class="logo">
+          <h1 class="logo-h1">Pinkterest</h1>
+        </div>
+        <nav class="nav-links">
+          <a href="javascript:void(0);" class="btn-rounded">Home</a>
+          <a href="javascript:void(0);" class="btn-rounded">Crear</a>
+          <div class="barra-busqueda">
+            <input type="text" placeholder="Buscar..." class="input-busqueda" />
+            <button type="submit">Buscar</button>
+          </div>
+          <a href="javascript:void(0);" class="btn-rounded">Mi cuenta</a>
+          <a
+            href="javascript:void(0);"
+            class="btn-rounded"
+            id="modoOscuroToggle"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </a>
+        </nav>
+      </section>
+    </header>
+
+    <main class="contenedor">
+      <h2 class="titulo-idea">Bienvenido, Jairo Vega</h2>
+      <p class="descripcion-idea">Ideas para ti</p>
+      <div class="ideas-container">
+        <article class="idea" id="idea1">
+          <section class="idea-content">
+            <img src="./assets/img/img1.gif" alt="idea1" id="idea1-img" />
+            <div class="dots-container">
+              <span class="dot active" id="dot1-1"></span>
+              <span class="dot" id="dot1-2"></span>
+            </div>
+            <div class="buttons">
+              <a
+                href="javascript:void(0);"
+                class="btn-rounded"
+                id="toggle-btn1"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+              <a href="javascript:void(0);" class="btn-rounded remove-btn">
+                <i class="fa-solid fa-eye-slash"></i>
+              </a>
+            </div>
+          </section>
+        </article>
+
+        <article class="idea" id="idea2">
+          <section class="idea-content">
+            <img src="./assets/img/img2.gif" alt="idea2" />
+            <div class="buttons">
+              <a href="javascript:void(0);" class="btn-rounded remove-btn"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></a>
+            </div>
+          </section>
+        </article>
+        <article class="idea" id="idea3">
+          <section class="idea-content">
+            <img src="./assets/img/img3.gif" alt="idea3" />
+            <div class="buttons">
+              <a href="javascript:void(0);" class="btn-rounded remove-btn"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></a>
+            </div>
+          </section>
+        </article>
+        <article class="idea" id="idea4">
+          <section class="idea-content">
+            <img src="./assets/img/img4.gif" alt="idea4" />
+
+            <div class="buttons">
+              <a href="javascript:void(0);" class="btn-rounded remove-btn"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></a>
+            </div>
+          </section>
+        </article>
+        <article class="idea" id="idea5">
+          <section class="idea-content">
+            <img src="./assets/img/img5.gif" alt="idea5" />
+            <div class="buttons">
+              <a href="javascript:void(0);" class="btn-rounded remove-btn"
+                ><i class="fa-solid fa-eye-slash"></i
+              ></a>
+            </div>
+          </section>
+        </article>
+        <article class="idea" id="idea6">
+          <section class="idea-content">
+            <img src="./assets/img/img6.jpeg" alt="idea6" id="idea6-img" />
+            <div class="dots-container">
+              <span class="dot active" id="dot6-1"></span>
+              <span class="dot" id="dot6-2"></span>
+            </div>
+            <div class="buttons">
+              <a
+                href="javascript:void(0);"
+                class="btn-rounded"
+                id="toggle-btn6"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+              <a href="javascript:void(0);" class="btn-rounded remove-btn">
+                <i class="fa-solid fa-eye-slash"></i>
+              </a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer class="navbar-bg">
+      <section class="navbar-cont contenedor">
+        <p>&reg; Pinkterest 2024 - All rights reserved</p>
+      </section>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
