@@ -56,4 +56,6 @@ form.addEventListener("submit", (e: SubmitEvent) => {
   let productito = new Producto(id, nombre, precio, cantidad);
   console.log(productito);
   tienda.agregarProducto(productito);
+
+  localStorage.setItem("Productos", JSON.stringify(productito));
 });

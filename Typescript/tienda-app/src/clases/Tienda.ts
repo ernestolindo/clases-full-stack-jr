@@ -1,23 +1,17 @@
 import { Producto } from "./Producto";
 
-export class Tienda {
+class Tienda {
+  // Inicializamos un array de productos vacio
   private productos: Producto[] = [];
 
+  // Si hay productos en el localStorage los viene a traer con este constructor
   constructor() {
-    this.productos = JSON.parse(localStorage.getItem("productos") || "[]");
+    // Ver si ya hay algo guardado
+    this.productos = JSON.parse(localStorage.getItem("productos" || "[]"));
   }
 
   agregarProducto(producto: Producto) {
+    // Agregar el producto que nos dan por param al final del array
     this.productos.push(producto);
-    this.refrescarLocal();
-  }
-
-  /* 
-        Guardamos todos los productos de this.productos
-        Dentro del LocalStorage Key "productos"
-    */
-  refrescarLocal() {
-    //Este guardado lo que hace es actualizar la lista de productos en el localStorage
-    localStorage.setItem("productos", JSON.stringify(this.productos));
   }
 }
