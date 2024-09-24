@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edades estudiantiles</title>
+  </head>
+  <body>
+    <h1>Edades de los estudiantes</h1>
+    <p>Ingrese todos los datos que se le solicitan por favor</p>
+    <!-- Botón para iniciar la solicitud de datos -->
+    <button onclick="solicitarEdadesTurnoMorning()">
+      Ingresar las edades de 5 estudiantes del turno mañana
+    </button>
+    <button onclick="solicitarEdadesTurnoTarde()">
+      Ingresar las edades de 6 estudiantes del turno mañana
+    </button>
+    <button onclick="solicitarEdadesTurnoNoche()">
+      Ingresar las edades de 11 estudiantes del turno mañana
+    </button>
+
+    <!-- Lugar donde se mostrarán los datos -->
+    <h2>Resultados</h2>
+    <h3>Promedio de edades turno mañana</h3>
+    <p id="displayMorning"></p>
+    <h3>Promedio de edades turno tarde</h3>
+    <p id="displayTarde"></p>
+    <h3>Promedio de edades turno noche</h3>
+    <p id="displayNoche"></p>
+    <h3>Promedio de edades mayor</h3>
+    <button onclick="calcTurnoMayor()">Ver turno con promedio mayor</button>
+    <p id="promMayor"></p>
+    <script src="ejercicio10.js"></script>
+  </body>
+</html>
