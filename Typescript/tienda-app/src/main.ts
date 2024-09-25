@@ -28,7 +28,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   </div>
 `;
 
-//Inicializamos la tienda para poder manipular los productos
+// Inicializamos la tienda para poder manipular los productos
 const tienda = new Tienda();
 
 //document.querySelector<HTMLElement>('#parrafo')!.innerText = "Esto es texto desde el p";
@@ -55,7 +55,6 @@ form.addEventListener("submit", (e: SubmitEvent) => {
 
   let productito = new Producto(id, nombre, precio, cantidad);
   console.log(productito);
-  tienda.agregarProducto(productito);
 
-  localStorage.setItem("Productos", JSON.stringify(productito));
+  tienda.agregarProducto(productito);
 });
