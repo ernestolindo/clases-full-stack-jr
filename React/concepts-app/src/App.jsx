@@ -1,6 +1,6 @@
 import "./App.css";
 import { Saludo } from "./components/Saludo";
-import { Saludito } from "./components/Saludo";
+import { Saludo as Saludito } from "./components/Saludo";
 
 function App() {
   return (
