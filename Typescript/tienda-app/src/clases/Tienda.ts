@@ -6,8 +6,15 @@ export class Tienda {
 
   // Si hay productos en el localStorage los viene a traer con este constructor
   constructor() {
-    // Ver si ya hay algo guardado en el local y traerlo
-    this.productos = JSON.parse(localStorage.getItem("productos") || "[]");
+    // Ver si ya hay algo guardado en el local y traerlo al array
+    const productosGuardados = JSON.parse(
+      localStorage.getItem("productos") || "[]"
+    );
+    // Reconstruir los objetos como instancias de Producto
+    this.productos = productosGuardados.map(
+      (prod: any) =>
+        new Producto(prod.id, prod.nombre, prod.precio, prod.cantidad)
+    );
   }
 
   agregarProducto(producto: Producto) {
@@ -19,6 +26,10 @@ export class Tienda {
   // Guardamos todos los productos de this.productos dentro del localStorage key "Productos"
   refreshLocal() {
     // Actualizar la lista de productos en el localStorage
-    localStorage.setItem("Productos", JSON.stringify(this.productos));
+    localStorage.setItem("productos", JSON.stringify(this.productos));
+  }
+
+  listarProductos() {
+    return this.productos;
   }
 }

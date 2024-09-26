@@ -23,6 +23,9 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
         </section>
 
         <button type="submit">Agregar producto</button>
+
+        <ul id="productList">
+        </ul>
       </form>
 
   </div>
@@ -34,10 +37,14 @@ const tienda = new Tienda();
 //document.querySelector<HTMLElement>('#parrafo')!.innerText = "Esto es texto desde el p";
 const form = document.getElementById("formProducto") as HTMLFormElement;
 
+const productList = document.getElementById("productList") as HTMLUListElement;
+
+// Cuando el form se envia, hacer lo siguiente
 form.addEventListener("submit", (e: SubmitEvent) => {
   e.preventDefault();
   console.log("Holiwis");
 
+  // Generar un id "random" basado en la fecha y hora actual
   const id = Date.now();
   //Seleccionamos los elementos a controlar y retiramos su valor
   const nombre = (document.getElementById("nombre") as HTMLInputElement).value;
@@ -57,4 +64,21 @@ form.addEventListener("submit", (e: SubmitEvent) => {
   console.log(productito);
 
   tienda.agregarProducto(productito);
+  renderProductos();
 });
+
+function renderProductos() {
+  productList.innerHTML = "";
+  console.log("Holiwis desde el renderProductos");
+
+  console.log(tienda.listarProductos());
+
+  // Crear un <li> por cada producto
+  tienda.listarProductos().map((producto: Producto) => {
+    const productoItem = document.createElement("li");
+    console.log(producto);
+    productoItem.textContent = `${producto.getNombre()} - $ ${producto.getPrecio()} - Stock: ${producto.getCantidad()}`;
+    productList.appendChild(productoItem);
+  });
+}
+renderProductos();
