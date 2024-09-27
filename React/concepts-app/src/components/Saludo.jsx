@@ -9,7 +9,7 @@ export const Saludo = () => {
   return (
     <>
       <h3>Yo en realidad estoy en el componente Saludo jejox</h3>
-      <h2>Hola {nombre}, como estas</h2>
+      <h2>Hola {nombre}, como estas?</h2>
       <button
         onClick={() => {
           cambiarNombre("Hector");
