@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Chauchis } from "./Chauchis";
 
 // Declaracion de un componente
 export const Saludo = () => {
@@ -16,6 +17,7 @@ export const Saludo = () => {
       >
         Magia
       </button>
+      <Chauchis nombreUsuario={nombre} />
     </>
   );
 };
