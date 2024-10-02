@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+React/auth-app/src/assets/firebase/config.js
+
