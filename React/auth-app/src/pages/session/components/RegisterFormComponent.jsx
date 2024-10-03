@@ -31,6 +31,7 @@ export const RegisterFormComponent = () => {
   };
   return (
     <div>
+      <h2>Register Form</h2>
       <form onSubmit={handleSubmit(onSubmitForm)}>
         <label htmlFor="">Email</label>
         <input
