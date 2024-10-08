@@ -2,9 +2,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase/config";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../../context/UserDataContext";
 
 export const LoginFormComponent = () => {
   const { register, handleSubmit } = useForm();
+  // forzar redireccionamiento
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
 
   const submitForm = (data) => {
     console.log(data);
@@ -13,6 +19,10 @@ export const LoginFormComponent = () => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
+        setUser(user);
+
+        alert("Inicio de sesion exitoso");
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;

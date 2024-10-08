@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link as FalsoA } from "react-router-dom";
 
 export const Home = () => {
   return (
     <>
       <h1>Home</h1>
-      <Link to="/session">Ingresar</Link>
+      <FalsoA to="/session">Ingresar</FalsoA>
     </>
   );
 };
