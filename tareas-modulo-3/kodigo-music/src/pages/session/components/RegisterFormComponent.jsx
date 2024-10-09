@@ -27,24 +27,37 @@ export const RegisterFormComponent = () => {
   return (
     <div>
       <h2>Registrarse</h2>
-      <form onSubmit={handleSubmit(onSubmitForm)}>
-        <label htmlFor="">Correo electrónico</label>
-        <input type="text" id="email" placeholder="ejemplo@dominio.com" {...register("email")} />
-        <label htmlFor="">Contraseña</label>
+      <form onSubmit={handleSubmit(onSubmitForm)} className="auth-form">
+        <label htmlFor="email">Correo electrónico</label>
+        <input
+          type="text"
+          id="email"
+          placeholder="ejemplo@dominio.com"
+          {...register("email")}
+          className="auth-input"
+        />
+
+        <label htmlFor="password">Contraseña</label>
         <input
           type="password"
           id="password"
           placeholder="Mínimo 8 caracteres"
           {...register("password")}
+          className="auth-input"
         />
-        <label htmlFor="">Confirmar contraseña</label>
+
+        <label htmlFor="confirmPassword">Confirmar contraseña</label>
         <input
           type="password"
           id="confirmPassword"
           placeholder="Repita la contraseña"
           {...register("confirmPassword")}
+          className="auth-input"
         />
-        <button type="submit">Registrarse</button>
+
+        <button type="submit" className="submit-btn">
+          Registrarse
+        </button>
       </form>
     </div>
   );

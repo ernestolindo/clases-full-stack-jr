@@ -1,4 +1,4 @@
-import "./assets/css/App.css";
+// import "./assets/css/App.css";
 import { Session } from "./pages/session/Session";
 import { Home } from "./pages/home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,7 +12,8 @@ function App() {
         <Routes>
           {/* Definimos las rutas */}
           <Route path="/home" element={<Home />} />
-          <Route index path="/auth" element={<Session />} />
+          <Route path="/auth" element={<Session />} />
+          <Route path="/" element={<Session />} />
         </Routes>
       </BrowserRouter>
     </>

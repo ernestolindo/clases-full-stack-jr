@@ -26,22 +26,28 @@ export const LoginFormComponent = () => {
   return (
     <div>
       <h2>Iniciar sesión</h2>
-      <form onSubmit={handleSubmit(submitForm)}>
-        <label htmlFor="">Correo electrónico</label>
+      <form onSubmit={handleSubmit(submitForm)} className="auth-form">
+        <label htmlFor="email">Correo electrónico</label>
         <input
           type="text"
           id="email"
           placeholder="Ingresa tu correo electrónico"
-          {...register("email")} // Asegúrate de que coincida con el registro
+          {...register("email")}
+          className="auth-input"
         />
-        <label htmlFor="">Contraseña</label>
+
+        <label htmlFor="password">Contraseña</label>
         <input
           type="password"
           id="password"
           placeholder="Introduce tu contraseña"
-          {...register("password")} // Asegúrate de que coincida con el registro
+          {...register("password")}
+          className="auth-input"
         />
-        <button type="submit">Iniciar sesión</button>
+
+        <button type="submit" className="submit-btn">
+          Iniciar sesión
+        </button>
       </form>
     </div>
   );

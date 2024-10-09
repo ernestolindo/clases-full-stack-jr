@@ -1,0 +1,194 @@
+/* Importar fuente Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* Paleta de colores */
+:root {
+  --color-fondo: #6a0dad; /* Color de fondo púrpura */
+  --color-texto-principal: #ffffff; /* Texto principal blanco */
+  --color-texto-secundario: #dcdcdc; /* Texto secundario gris claro */
+  --color-boton: #9b59b6; /* Botones púrpura claro */
+  --color-boton-hover: #8e44ad; /* Hover de botones púrpura oscuro */
+  --color-acento: #f39c12;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-texto-principal);
+}
+
+p {
+  color: var(--color-texto-secundario);
+}
+
+/* Lo basico */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto-principal);
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+/* Contenedor */
+
+.navbar-bg {
+  background-color: var(--color-boton-hover); /* Púrpura más oscuro para el header */
+  padding: 4vh;
+}
+
+.contenedor {
+  width: 75vw;
+  margin: 0 auto;
+}
+
+/* Font sizes */
+h1,
+h2 {
+  font-size: 2vw;
+  margin: 2vw 0;
+}
+
+h3 {
+  font-size: 1.5vw;
+}
+
+button {
+  font-size: 1vw;
+}
+
+/* links sin subrayado */
+a {
+  text-decoration: none;
+}
+
+/* Header */
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a lo largo de la fila */
+  align-items: center; /* Alinea verticalmente en el centro */
+}
+
+/* Estilos para la logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 5vw; /* Tamaño fijo para la imagen */
+  height: auto;
+  margin-right: 1vw; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos para la barra de búsqueda */
+.barra-busqueda {
+  display: flex;
+  align-items: center;
+}
+
+.barra-busqueda input {
+  width: 25vw; /* Ancho fijo para la barra de búsqueda */
+  margin-right: 1vw; /* Espacio entre el input y el botón */
+  background-color: var(--color-fondo); /* Fondo púrpura */
+  color: var(--color-texto-principal); /* Texto blanco */
+  padding: 0.7vw; /* Espaciado interno */
+  font-size: 1vw; /* Tamaño de fuente */
+  transition: border-color 0.3s ease; /* Efecto de transición en el borde */
+  border: 2px solid var(--color-boton); /* Borde púrpura claro */
+  border-radius: 5px; /* Esquinas redondeadas */
+}
+
+input:focus {
+  outline: none; /* Quitar el contorno predeterminado */
+  border-color: var(--color-boton-hover); /* Cambiar el borde al enfocarse */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo más claro al enfocarse */
+}
+
+input::placeholder {
+  color: var(--color-texto-secundario); /* Color del texto del placeholder */
+  opacity: 0.7; /* Asegura que el color no sea transparente */
+}
+.barra-busqueda button {
+  background-color: var(--color-boton);
+  color: var(--color-texto-principal);
+}
+
+/* Estilos para la navegación */
+.nav-container {
+  display: flex;
+  gap: 1vw; /* Espaciado entre los botones de navegación */
+}
+
+.nav-container button,
+.barra-busqueda button {
+  background-color: var(--color-boton);
+  color: var(--color-texto-principal);
+  padding: 1.5vh 1.5vw;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-container button:hover,
+.barra-busqueda button:hover {
+  background-color: var(--color-boton-hover); /* Efecto hover */
+}
+
+/* Footer */
+footer {
+  font-size: 1vw;
+  text-align: center;
+}
+
+/* Estilos para la sección de playlists */
+.lista-albums {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+  gap: 2vw; /* Espacio entre cada playlist */
+  padding: 2vw;
+  background-color: var(--color-fondo); /* Fondo púrpura */
+  border-radius: 10px;
+}
+
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-boton-hover); /* Púrpura más oscuro */
+  padding: 1vw;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Animación para hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.album:hover {
+  background-color: var(--color-boton); /* Cambia a púrpura claro al hacer hover */
+  transform: translateY(-10px); /* Efecto de levantar al hacer hover */
+}
+
+.album img {
+  width: 100% !important; /* Asegura que la imagen ocupe el ancho total */
+  border-radius: 10px;
+}
+
+.album h3 {
+  color: var(--color-texto-principal); /* Texto blanco */
+  margin-top: 1vw;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .lista-albums {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .lista-albums {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+}
