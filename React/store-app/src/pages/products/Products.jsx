@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { db } from "../../firebase/config";
 import { useEffect } from "react";
@@ -7,8 +7,9 @@ import { useState } from "react";
 export const Products = () => {
   const { register, handleSubmit, reset, setValue } = useForm();
   const [products, setProducts] = useState([]);
+  const [editId, setEditId] = useState(null);
 
-  // Read
+  // Read -> traer todos los documentos desde FireStore
   const getProducts = async () => {
     const productsCollection = await getDocs(collection(db, "products"));
     const data = productsCollection.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
@@ -16,7 +17,7 @@ export const Products = () => {
     setProducts(data);
   };
 
-  // Create
+  // Create -> Enviar un nuevo doc a la coleccion de Firebase
   const addProduct = async (data) => {
     console.log(data);
     // Enviar a firestore
@@ -30,13 +31,38 @@ export const Products = () => {
     getProducts();
   };
 
-  // Edit
+  // editProduct  -> obtener los datos del producto y setearlos en los input del form
   const editProduct = (producto) => {
     console.log("Editando un producto");
     console.log(producto);
     setValue("name", producto.name);
     setValue("price", producto.price);
     setValue("stock", producto.stock);
+    // Guardamos el id para poder actualizar el producto
+    setEditId(producto.id);
+  };
+
+  // updateProduct -> actualizar un doc en la coleccion
+  const updateProduct = async (data) => {
+    const docRef = doc(db, "products", editId);
+
+    await updateDoc(docRef, {
+      name: data.name,
+      price: parseFloat(data.price),
+      stock: parseInt(data.stock)
+    });
+
+    setEditId(null);
+    reset();
+    getProducts();
+  };
+
+  // Eliminar un documento de la coleccion
+  const deleteProduct = async (id) => {
+    const docRef = doc(db, "products", id);
+    await deleteDoc(docRef);
+
+    getProducts();
   };
 
   useEffect(() => {
@@ -47,7 +73,7 @@ export const Products = () => {
     <>
       <h2>Productos</h2>
 
-      <form onSubmit={handleSubmit(addProduct)}>
+      <form onSubmit={editId ? handleSubmit(updateProduct) : handleSubmit(addProduct)}>
         <section>
           <label htmlFor="">Nombre de producto</label>
           <input type="text" {...register("name")} required />
@@ -60,7 +86,7 @@ export const Products = () => {
           <label htmlFor="">Cantidad</label>
           <input type="text" {...register("stock")} required />
         </section>
-        <button type="submit">Enviar</button>
+        <button type="submit">{editId ? "Editar" : "Enviar"}</button>
       </form>
       <main>
         <table>
@@ -88,6 +114,13 @@ export const Products = () => {
                         }}
                       >
                         Edit
+                      </button>
+                      <button
+                        onClick={() => {
+                          deleteProduct(product.id);
+                        }}
+                      >
+                        Delete
                       </button>
                     </td>
                   </tr>
