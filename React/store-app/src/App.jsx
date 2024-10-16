@@ -1,14 +1,13 @@
-import './App.css'
-import { Products } from './pages/products/Products'
+import "./App.css";
+import { Products } from "./pages/products/Products";
 
 function App() {
-
   return (
     <>
-     <h1>CRUD BASICO FireStore</h1>
-     <Products />
+      <h1>CRUD Basico FireStore</h1>
+      <Products />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
