@@ -23,7 +23,7 @@ function App() {
         Authorization: `Bearer ${token}`
       }
     });
-    // Esperar que la peticion se respuesta y luego lo parseamos a JSON y lo consologueamos
+    // Esperar que la peticion se resuelva y luego lo parseamos a JSON y lo consologueamos
     const data = await response.json();
     console.log(data.data);
   };
