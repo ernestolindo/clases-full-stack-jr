@@ -2,60 +2,87 @@
 
 class Node
 {
-  public $data; // Stores the data of the node
-  public $next; // Points to the next node
+  public $value;
+  public $next;
 
-  public function __construct($data)
+  function __construct($data)
   {
-    $this->data = $data;
-    $this->next = null;
+    if ($data === null) {
+      $this->value = 0;
+      $this->next = null;
+    } else {
+      $this->value = $data;
+      $this->next = null;
+    }
   }
 }
 
 class LinkedList
 {
-  public $head; // The first node in the list
+  public $head;
 
-  public function __construct()
+  function __construct()
   {
-    $this->head = null; // The function starts off with no nodes
+    $this->head = null;
   }
 
-  // Add a new node to the end  of the list
-  public function append($data)
+  function insert($data)
   {
     $newNode = new Node($data);
-    // Check if the new node added is the first one
+
     if ($this->head === null) {
-      // Set the new node as the head
       $this->head = $newNode;
-      return;
-    }
+    } else {
+      //Variable auxiliar
+      $aux = $this->head;
 
-    // Create a variable and set it to the first node
-    $current = $this->head;
-    // Move through the nodes' next property
-    while ($current->next !== null) {
-      $current = $current->next;
+      while ($aux->next !== null) {
+        $aux = $aux->next;
+      }
+
+      $aux->next = $newNode;
     }
-    // The node's property which points to the next node is set to the new node
-    $current->next = $newNode;
   }
 
-  // Display the linked list
-  public function display()
+  function delete($data)
   {
-    $current = $this->head;
-    while ($current !== null) {
-      echo $current->data . " -> ";
-      $current = $current->next;
+    if ($this->head === null) {
+      return "La lista estaba previamente vacia. \n";
     }
-    echo "null\n";
+
+    if ($this->head->value === $data) {
+      print("Se Encontro. \n");
+      $this->head = $this->head->next;
+      return "Encontrado";
+    }
+
+
+    $aux = $this->head;
+
+
+    while ($aux->next !== null) {
+      if ($aux->next->value == $data) {
+        $aux->next = $aux->next->next;
+        print("Si se elimino. \n");
+        return "Se ha eliminado el dato.";
+      }
+
+      $aux = $aux->next;
+    }
+
+    return "Ese dato no existe en la lista.";
   }
+
+  // Generar un metodo el cual me imprima o retorne el length de la lista
+
+
+  // Generar un metodo para vaciar la lista
+
 }
 
-$list = new LinkedList();
-$list->append(10);
-$list->append(20);
-$list->append(30);
-$list->display();
+$listita = new LinkedList();
+$listita->insert(3);
+$listita->insert(5);
+$listita->insert(100);
+print($listita->delete(5) . "\n");
+print_r($listita);
