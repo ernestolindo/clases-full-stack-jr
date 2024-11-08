@@ -37,17 +37,28 @@ class BinaryTree
     // Variable auxiliar: para ir avanzando de nodos, arrancando en la raiz
 
     $currentNode = $this->root;
+    $flag = true;
+    while ($flag) {
+      // Cuando el nodo ya exista previamente
+      if ($newNode->value === $currentNode->value) return "El nodo ya existe\n";
 
-    // si ya tenemos un dato -- si es mayor que el nodo actual...
-    if ($newNode->value > $currentNode->value) {
-      // lo insertamos a la derecha
-      $currentNode->right = $newNode;
-      return $newNode;
-    }
-    // si es menor
-    else {
-      $currentNode->left = $newNode;
-      return $newNode;
+      // si ya tenemos un dato y es mayor que el nodo actual...
+      if ($newNode->value > $currentNode->value) {
+        if ($currentNode->right === null) {
+          // lo insertamos a la derecha
+          $currentNode->right = $newNode;
+          $flag = false;
+        }
+        $currentNode = $currentNode->right;
+      }
+      // si es menor
+      else {
+        if ($currentNode->left === null) {
+          $currentNode->left = $newNode;
+          return $newNode;
+        }
+        $currentNode = $currentNode->left;
+      }
     }
   }
 }
@@ -57,4 +68,6 @@ $arbolito->insert(5);
 $arbolito->insert(10);
 $arbolito->insert(3);
 $arbolito->insert(15);
+$arbolito->insert(12);
+print($arbolito->insert(12));
 print_r($arbolito);

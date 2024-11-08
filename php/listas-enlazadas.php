@@ -74,15 +74,36 @@ class LinkedList
   }
 
   // Generar un metodo el cual me imprima o retorne el length de la lista
+  function length()
+  {
+    $count = 0; // Initialize a counter
+    $current = $this->head; // Start from the head node
+
+    while ($current !== null) { // Traverse until the end of the list
+      $count++; // Increment the counter for each node
+      $current = $current->next; // Move to the next node
+    }
+
+    return $count . "\n"; // Return the total count of nodes
+  }
+
+
 
 
   // Generar un metodo para vaciar la lista
-
+  function vaciarLista()
+  {
+    $this->head = null;
+    return "Se vació la lista\n";
+  }
 }
 
 $listita = new LinkedList();
 $listita->insert(3);
 $listita->insert(5);
 $listita->insert(100);
+$listita->insert(12);
 print($listita->delete(5) . "\n");
+print($listita->length());
+print($listita->vaciarLista());
 print_r($listita);
