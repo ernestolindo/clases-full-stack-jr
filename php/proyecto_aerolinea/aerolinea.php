@@ -3,18 +3,28 @@
 class Aerolinea
 {
     // Encapsulamiento -> modificadores de acceso
+    private $id;
     private $nombre;
     private $cant_aviones;
     private $tipo_aerolinea;
 
-    function __construct($nombreParam, $cantAvionesParam, $tipoAerolineaParam)
+    function __construct($idParam,  $nombreParam, $cantAvionesParam, $tipoAerolineaParam)
     {
+        $this->id = $idParam;
         $this->nombre = $nombreParam;
         $this->cant_aviones = $cantAvionesParam;
         $this->tipo_aerolinea = $tipoAerolineaParam;
     }
 
     // Abstraccion -> metodos para interactuar con propiedades encapsuladas
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
 
 
