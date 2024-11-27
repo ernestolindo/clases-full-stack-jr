@@ -45,6 +45,8 @@ if (isset($_POST['editForm'])) {
         }
         // }
     }
+
+    header('Location: /clases-full-stack-jr/php/proyecto_aerolinea/');
 }
 
 // eliminar una aerolinea
@@ -56,6 +58,8 @@ if (isset($_GET['delete'])) {
             break; // salir del bucle
         }
     };
+    $_SESSION['aerolineas'] = $aerolineas;
+    header('Location: /clases-full-stack-jr/php/proyecto_aerolinea/');
 }
 
 //print_r($aerolineas);
