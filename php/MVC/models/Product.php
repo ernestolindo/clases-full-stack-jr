@@ -18,24 +18,36 @@ class Product
     public function read()
     {
         $query = "SELECT * FROM {$this->table_name}";
+        $sentence = $this->connection->prepare($query);
+        $sentence->execute();
+        return $sentence;
     }
 
     public function create()
     {
         //Logica para crear un producto
-        $query = "INSERT INTO {$this->table_name} (nombre, precio, cantidad, proveedor) VALUES ({$this->name}, {$this->price}, {$this->quantity}, {$this->provider})";
+        $query = "INSERT INTO {$this->table_name} (nombre, precio, cantidad, proveedor) VALUES (?, ?, ?, ?)";
+        $sentence = $this->connection->prepare($query);
+        $sentence->execute([$this->name, $this->price, $this->quantity, $this->provider]);
+        return $sentence;
     }
 
     public function update()
     {
         //Logica para actualizar un producto
-        $query = "UPDATE {$this->table_name} SET nombre = {$this->name}, precio = {$this->price}, cantidad = {$this->quantity}, proveedor = {$this->provider} WHERE id = {$this->id}";
+        $query = "UPDATE {$this->table_name} SET nombre = ?, precio = ?, cantidad = ?, proveedor = ? WHERE id = {$this->id}";
+        $sentence = $this->connection->prepare($query);
+        $sentence->execute([$this->name, $this->price, $this->quantity, $this->provider]);
+        return $sentence;
     }
 
     public function findOne($id)
     {
         //Logica para buscar un producto
-        $query = "SELECT FROM {$this->table_name} WHERE id = $id";
+        $query = "SELECT * FROM {$this->table_name} WHERE id = $id";
+        $sentence = $this->connection->prepare($query);
+        $sentence->execute();
+        return $sentence;
     }
 
 
