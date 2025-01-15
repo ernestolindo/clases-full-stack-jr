@@ -12,6 +12,8 @@ class TaskController extends Controller
      */
     public function index()
     {
+        // Query builder
+
         // Obtener todas las tareas
         $tasks = Task::all();
 
@@ -54,16 +56,30 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, string $id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        $task->update($request->all());
+        return response()->json([
+            'message' => 'Task updaded successfully',
+            'data' => $task
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Task $task)
+    public function destroy(Task $task, string $id)
     {
-        //
+        // Buscar la tarea por el id
+        $task = Task::findOrFail($id);
+
+        // Eliminar la tarea
+        $task->delete();
+
+        return response()->json([
+            'message' => 'Task deleted successfully'
+        ]);
     }
 }
